@@ -1,4 +1,4 @@
-#thi is the codespace that create the teams and store them.
+#this is the codespace that validates the teams and store them.
 
 def validate_team_name(name, team):
 
@@ -9,7 +9,10 @@ def validate_team_name(name, team):
 
     return cleaned_name
 
-
+#generate team id based on the existing team list
 def generate_team_id(team):
     if not team:
         return f"TM001"
+    numeric_id = [int(t.split('TM')[1]) for t in team]
+    digit = max(numeric_id) + 1
+    return f"TM{digit:03d}"
