@@ -9,6 +9,7 @@ def validate_team_name(name, team):
 
     return cleaned_name
 
-lst = ["Arsenal", "Chelsea", "Run"]
 
-print(validate_team_name("   arsenal   ", lst))
+def generate_team_id(team):
+    if not team:
+        return f"TM001"
