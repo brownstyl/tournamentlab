@@ -2,17 +2,20 @@
 
 def validate_team_name(name, team):
 
+    if not isinstance(name, str):
+        raise ValueError (f"invalid: the input [{name}] you provided should a string instead")
+
     cleaned_name = name.strip().casefold()
-    if not isinstance(name, str) or type(name) is bool or type(name) is int:
-        raise ValueError (f"invalid: the input {name} you provided should a string instead")
 
     if len(cleaned_name) < 2 or len(cleaned_name) >30:
-        raise ValueError (f"the team name {cleaned_name} you provided is too short")
+        raise ValueError(f"the team name [{cleaned_name}] you provided must contain between 2 and 30 characters.")
+    
+    for names in team:
+        if cleaned_name == names['name'].casefold():
+            raise f"Error {[names['name']]}: already exist please add another name that does not exist"
+        
+    return cleaned_name.title()
 
-    if cleaned_name in team:
-        return f"Error {[name]}: already exist please add another name that does not exist"
-
-    return cleaned_name
 
 #generate team id based on the existing team list
 def generate_team_id(team):
@@ -23,5 +26,7 @@ def generate_team_id(team):
     digit = max(numeric_id) + 1
 
     return f"TM{digit:03d}"
+
+
 
     
