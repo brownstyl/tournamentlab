@@ -45,5 +45,8 @@ def register_team(name, team, fixture):
 
     return team_list
 
-
-
+def get_team_by_id(team_id, team):
+    for i in team:
+        if i['id'] == team_id:
+             return i
+    return None
