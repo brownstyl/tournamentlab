@@ -29,5 +29,21 @@ def generate_team_id(team):
     return f"TM{digit:03d}"
 
 
+#Register team when the team provides their name and then generate an ID for them. with the
+def register_team(name, team, fixture):
+    if fixture:
+        raise ValueError ("Oops Tournament is ongoing and registration has closed Please wait for another Season!!")
 
+    if len(team) >= 8:
+        raise ValueError ("Registration is full. Maximum of 8 teams allowed.") 
     
+    team_validation = validate_team_name(name, team)
+    gen_id = generate_team_id(team)
+
+    team_list = {"id": gen_id, "name": team_validation}
+    team.append(team_list)
+
+    return team_list
+
+
+
