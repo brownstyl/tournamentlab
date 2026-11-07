@@ -50,3 +50,7 @@ def get_team_by_id(team_id, team):
         if i['id'] == team_id:
              return i
     return None
+
+# Return a copy of the team list to prevent external modifications
+def list_teams(team):
+    return team.copy()  
