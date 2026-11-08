@@ -19,3 +19,6 @@
 * Registration closes when fixtures are generated.
 * Fixtures cannot be re-generated during the same season.
 * Fixtures cannot be regenerated during the same season.
+
+## our system should be able to register up to 4 or 8 as mazimum teams first before fixture could take place and ehrn fixture takes plave then it blocks Registration for that season.
+
